@@ -1,25 +1,25 @@
 #include <iostream>
 #include <cstdlib>
 #include <ctime>
-
+using namespace std;
 int main(){
+     int b;
      srand(time(0));
-     int num=rand() %10+1;
-     int g;
+     int num = rand()%10+1;
 
      do {
-        std::cout <<"guess the number (1 to 10): ";
-        std::cin >> g;
+        cout <<"Guess the number (1 to 10): ";
+        cin >> b;
      
-        if (g>num){
-            std::cout <<"too high!try again.\n";
-        } else if(g<num) {
-            std::cout <<"too low!try again.\n";
+        if (b>num){
+            cout <<"Too high!try again.\n";
+        } else if(b<num) {
+            cout <<"Too low!try again.\n";
 
-        }
-
-    } while (g!=num);
+        } else {
+             cout <<"Congratulations! you guessed the number.\n";
+        }   
+    } while (b !=num);
       
-    std::cout <<"congratulations!you guessed the number.\n";
     return 0;
 }
