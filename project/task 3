@@ -1,21 +1,21 @@
 #include <iostream>
-
+using namespace std;
 char b[9] = {'1','2','3','4','5','6','7','8','9'};
 char p = 'X';
 int m;
 
 void showBoard() {
-    std::cout << b[0] << " " << b[1] << " " << b[2] << "\n";
-    std::cout << b[3] << " " << b[4] << " " << b[5] << "\n";
-    std::cout << b[6] << " " << b[7] << " " << b[8] << "\n";
+    cout << b[0] << " " << b[1] << " " << b[2] << "\n";
+    cout << b[3] << " " << b[4] << " " << b[5] << "\n";
+    cout << b[6] << " " << b[7] << " " << b[8] << "\n";
 }
 
 void move() {
-    std::cout << "Player " << p << ", enter move (1-9): ";
-    std::cin >> m;
+    cout << "Player " << p << ", enter move (1-9): ";
+    cin >> m;
     if (b[m-1] != 'X' && b[m-1] != 'O') b[m-1] = p;
     else {
-        std::cout << "Invalid move! Try again.\n";
+        cout << "Invalid move! Try again.\n";
         move();
     }
 }
@@ -43,12 +43,12 @@ int main() {
         move();
         if (win()) {
             showBoard();
-            std::cout << "Player " << p << " wins!\n";
+            cout << "Player " << p << " wins!\n";
             break;
         }
         if (draw()) {
             showBoard();
-            std::cout << "It's a draw!\n";
+            cout << "It's a draw!\n";
             break;
         }
         switchPlayer();
